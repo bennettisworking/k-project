@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>{{ pageTitle }}</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/main.css"/>
 </head>
 <body>
@@ -11,4 +13,63 @@
 	{% block footer %}{% endblock %}
 </footer>
 </body>
+<script>
+
+let comments = [
+	{
+		"username" : "Walter Becker",
+		"comment" : "Love the website, now love the bakery."
+	},
+	{
+		"username" : "Donald Fagen",
+		"comment" : "I'd leave my wife for Kink's eclairs."
+	},
+	{ 
+		"username" : "Syd Barrett",
+		"comment" : "I've got a bike, you can ride it if you like."
+	}
+];
+
+const inputUsername = document.getElementById('inputUsername');
+const inputComment = document.getElementById('inputComment');
+const inputSubmit = document.getElementById('inputSubmit');
+const userComments = document.getElementById('userComments');
+
+init = () => {
+	setFormListeners();
+	refreshComments();
+}
+
+setFormListeners = () => {
+	console.log('mew');
+	inputSubmit.addEventListener('click',()=>{
+		let item = {};
+		item.username = inputUsername.value;
+		item.comment = inputComment.value;
+		comments.push(item);
+		refreshComments();
+		clearInputs();
+		alert('Your comment has been added.');
+	})
+}
+
+clearInputs = () => {
+	inputUsername.value = '';
+	inputComment.value = '';
+}
+
+refreshComments = () => {
+	const userprefix = '<p class="comments__username"><i class="fa fa-comments-o" aria-hidden="true"></i> ';
+	const commentprefix = '<p class="comments__text">';
+	let list = '';
+	comments.map(item => {
+		list += '<li class="comments__item">';
+		list += userprefix + item.username + '</p>';
+		list += commentprefix + item.comment + '</p>';
+		list += '</li>'
+	});
+	userComments.innerHTML = list;
+}
+init();
+</script>
 </html>

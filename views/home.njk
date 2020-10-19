@@ -1,5 +1,60 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<h1>Hello, world!</h1>
+<header class="header">
+	<a class="header__logo">
+		<img class="header__logo-img" src="./assets/baking-logo.png">
+	</a>
+</header>
+<nav class="nav">
+	<ul class="nav__list">
+		<li class="nav__item">Cropcakes</li>
+		<li class="nav__item">Whipped Desserts</li>
+		<li class="nav__item">I-Scream</li>
+	</ul>
+</nav>
+<div class="container">
+	<section>
+		<article class="article">
+		<h2 class="article__headline">Get Baked with Kink</h2>
+			<div class="article__column article__column--text">
+				<p>In a surprising move, adult industry giant Kink.com is expanding into the food service industry with a line of adult-themed bakeries to be opening across the country next year.</p>
+				<p>Joe Huffman fom Kink attributes the idea to a conversation he had with a prospective employee some time ago.</p>
+				<p>"This guy was a total nut", admits Joe, "but in the course of the interview he shared his secret penchant for putting umami-inducing ingredients such as fish sauce into his baked goods."</p>
+				<p>"That was brilliant... and I thought about that conversation all day--and from that grew the idea for Kink's Bakery."
+				<p>The bakery chain will offer hardcore adult-themed pastries, fountain treats and, of course, <em>whipped</em> desserts.
+			</div>
+			<div class="article__column article__column--image">
+				<figure class="article__figure">
+					<img src="./assets/placeholder.png">
+		  			alt="Gagged, unsure narwhal">
+		  		<figcaption class="article__caption">There goes a narwhal!</figcaption>
+				</figure>
+			</div>
+		</article>
+	</section>
+	<section>
+	<article class="article">
+		<h2 class="article__headline">What Do You Think?</h2>
+		<div class="article__column article__column--form">
+			<form class="form">
+				<div class="form__item">
+					<label class="form__label">Username</label>
+					<input class="form__input" type="text" id="inputUsername">
+				</div>
+				<div class="form__iten">
+					<label class="form__label">Comment</label>
+					<textarea class="form__input" id="inputComment">Type your comment here.</textarea>
+				</div>
+				<div class="form__button form__button--submit" id="inputSubmit">Submit Comment</div>
+			</form>
+		</div>
+		<div class="article__column article__column--comments">
+		<h3 class="article__subhed">User Comments</h3>
+		<ul class="comments" id="userComments">
+		</ul>
+		</div>
+	</article>
+	</section>
+</div>
 {% endblock %}
